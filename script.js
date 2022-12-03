@@ -2,6 +2,7 @@ let initialPrice = document.querySelector("#initial-price")
 let quantity = document.querySelector("#Quantity")
 let currentPrice = document.querySelector("#Current-price")
 const tellMe = document.querySelector("#tell-me")
+let result = document.querySelector("#result")
 
 tellMe.addEventListener("click", calculate)
 
@@ -21,18 +22,13 @@ function calculate() {
 
 function calculateProfitAndLoss(initial, quantity, current) {
     if (initial > current) {
-        var lossvalue = (initial - current) * quantity
-        var lossPercentage = (loss / initial) * 100
-        console.log("you loss is " + lossvalue)
+        var loss = (initial - current) * quantity
+        console.log(`your loss is ${loss}`)
     } else if (current > initial) {
-        var profitvalue = (current - initial) * quantity
-        var profitPercentage = (profit / initial) * 100
-        console.log("your profit is  " + profitvalue)
-
+        var profit = (current - initial) * quantity
+        console.log(`your profit is ${profit}`)
     } else {
-
-        console.log("no loss no profit")
+        result.textContent = " tu chakka tera baap bada chakka"
     }
-
 }
 
