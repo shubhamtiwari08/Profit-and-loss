@@ -20,17 +20,18 @@ function calculate() {
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
-    if (initial === current){
-        console.log("no loss no profit")
-    } else if (initial < current) {
-        var profit = (current - initial) * quantity
-        var profitPercentage = (profit / initial) * 100
-        console.log("your profit is  " + profit)
-
-    }else (initial > current) {
-        var loss = (initial - current) * quantity
+    if (initial > current) {
+        var lossvalue = (initial - current) * quantity
         var lossPercentage = (loss / initial) * 100
-        console.log("you loss is " + loss) 
+        console.log("you loss is " + lossvalue)
+    } else if (current > initial) {
+        var profitvalue = (current - initial) * quantity
+        var profitPercentage = (profit / initial) * 100
+        console.log("your profit is  " + profitvalue)
+
+    } else {
+
+        console.log("no loss no profit")
     }
 
 }
