@@ -16,19 +16,29 @@ function calculate() {
     var curr = currentPrice.value
 
     calculateProfitAndLoss(ip, qty, curr)
-
-
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
     if (initial > current) {
-        var loss = (initial - current) * quantity
-        console.log(`your loss is ${loss}`)
+        var loss = (initial - current) * quantity;
+        var lossPercentage = (loss / initial) * 100;
+
+        resultant(
+            `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`
+        );
     } else if (current > initial) {
-        var profit = (current - initial) * quantity
-        console.log(`your profit is ${profit}`)
+        var profit = (current - initial) * quantity;
+        var profitPercentage = (profit / initial) * 100;
+
+        resultant(
+            `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`
+        );
     } else {
-        result.textContent = " tu chakka tera baap bada chakka"
+        resultant(`No pain no gain and no gain no pain`);
     }
 }
 
+function resultant(message) {
+    resultant.textContent = message
+}
+console.log(initial)
